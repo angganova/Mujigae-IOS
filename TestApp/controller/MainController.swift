@@ -66,21 +66,12 @@ class MainController : UIViewController,
             ))
         }
         
-        setBaseView()
+        self.cv.register(UINib(nibName: list_cell, bundle: nil), forCellWithReuseIdentifier: list_cell)
     }
     
     @IBAction func btDoneAct(_ sender: UIButton) {
         prepareData()
     }
-    
-    func setBaseView(){
-        btDone.titleLabel?.textColor = UIColor.white
-        btDone.layer.backgroundColor = redColor?.cgColor
-        
-        
-        self.cv.register(UINib(nibName: list_cell, bundle: nil), forCellWithReuseIdentifier: list_cell)
-    }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data.count
